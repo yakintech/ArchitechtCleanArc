@@ -1,4 +1,6 @@
-﻿using Architecht.Infrastructure.UnitOfWork;
+﻿using Architecht.Application.Queries;
+using Architecht.Infrastructure.UnitOfWork;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,18 +10,35 @@ namespace Architecht.API.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        private readonly IUnitOfWork _unitOfWork;
 
-        public CategoryController(IUnitOfWork unitOfWork)
+        private readonly IMediator _mediator;
+
+        public CategoryController(IMediator mediator)
         {
-            _unitOfWork = unitOfWork;
+            _mediator = mediator;
         }
+      
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            var categories = _unitOfWork.CategoryRepository.GetAll();
-            return Ok(categories);
+            var query = new GetAllCategoriesQuery();
+            var result = await _mediator.Send(query);
+
+
+            return Ok(result);
+        }
+
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(Guid id)
+        {
+            var query = new GetCategoryByIdQuery();
+            query.Id = id;
+
+            var result = await _mediator.Send(query);
+
+            return Ok(result);
         }
     }
 }

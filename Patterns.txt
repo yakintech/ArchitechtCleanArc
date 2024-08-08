@@ -1,2 +1,11 @@
 1. Repository Pattern
 2. UnitOfWork Pattern
+3. CQRS Pattern (Command Query Responsibility Segregation)
+
+
+
+MediatR Pattern ile
+Queryleri sorumlu handlerlara yönlendirir.
+Controller icerisindeki bagimliliklari azaltir.
+Tek handler sadece bir is yapar.
+Test edilebilirlik saglar.

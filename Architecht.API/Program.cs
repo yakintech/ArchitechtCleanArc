@@ -1,3 +1,4 @@
+using Architecht.Application.Queries.ECommerce.Category;
 using Architecht.Infrastructure.EF;
 using Architecht.Infrastructure.Repositories.ECommerce;
 using Architecht.Infrastructure.UnitOfWork;
@@ -13,6 +14,12 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<ArchitechtContext>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+builder.Services.AddMediatR(opt =>
+{
+    opt.RegisterServicesFromAssemblyContaining<GetAllCategoriesQueryHandler>();
+    opt.RegisterServicesFromAssemblyContaining<GetCategoryByIdQueryHandler>();
+});
 
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 

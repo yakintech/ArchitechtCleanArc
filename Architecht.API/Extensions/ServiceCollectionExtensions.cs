@@ -1,6 +1,10 @@
 ﻿using Architecht.Application.Commands;
+using Architecht.Application.DTO;
 using Architecht.Application.Queries;
+using Architecht.Application.Validators;
 using Architecht.Infrastructure.Repositories.ECommerce;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -32,6 +36,17 @@ namespace Architecht.API.Extensions
             });
 
             return services;
-        }   
+        }
+
+     
+        public static IServiceCollection AddValidations(this IServiceCollection services)
+        {
+            services.AddFluentValidationAutoValidation();
+            services.AddScoped<IValidator<CreateCategoryDto>, CreateCategoryValidator>();
+            services.AddScoped<IValidator<UpdateCategoryDto>, UpdateCategoryValidator>();
+
+            return services;
+        }
+
     }
 }

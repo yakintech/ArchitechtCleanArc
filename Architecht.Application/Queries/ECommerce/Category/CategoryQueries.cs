@@ -16,4 +16,10 @@ namespace Architecht.Application.Queries
     {
         public Guid Id { get; set; }
     }   
+
+    public class GetCategoriesWithPaginationQuery : IRequest<List<GetAllCategoriesDto>>
+    {
+        public int Page { get; set; }
+        public int PageSize { get; set; }
+    }
 }

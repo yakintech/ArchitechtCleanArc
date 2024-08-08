@@ -59,4 +59,27 @@ namespace Architecht.Application.Queries.ECommerce.Category
             return result;
         }
     }
+
+
+    public class GetCategoriesWithPaginationQueryHandler : IRequestHandler<GetCategoriesWithPaginationQuery, List<GetAllCategoriesDto>>
+    {
+        private IUnitOfWork unitOfWork;
+
+        public GetCategoriesWithPaginationQueryHandler(IUnitOfWork unitOfWork)
+        {
+            this.unitOfWork = unitOfWork;
+        }
+
+        public async Task<List<GetAllCategoriesDto>> Handle(GetCategoriesWithPaginationQuery request, CancellationToken cancellationToken)
+        {
+            var categories = unitOfWork.CategoryRepository.GetAll(request.Page, request.PageSize);
+            var result = categories.Select(c => new GetAllCategoriesDto
+            {
+                Id = c.Id,
+                Name = c.Name
+            }).ToList();
+
+            return result;
+        }
+    }   
 }

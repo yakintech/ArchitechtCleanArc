@@ -1,0 +1,6 @@
+@Architecht.API_HostAddress = http://localhost:5128
+
+GET {{Architecht.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

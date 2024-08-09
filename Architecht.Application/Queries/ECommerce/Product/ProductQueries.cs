@@ -11,4 +11,10 @@ namespace Architecht.Application.Queries.ECommerce.Product
     public class GetAllProductsQuery : IRequest<List<GetAllProductsDto>>
     {
     }
+
+
+    public class GetProductByIdQuery : IRequest<GetProductByIdDto>
+    {
+        public Guid Id { get; set; }
+    }
 }

@@ -1,5 +1,6 @@
 ﻿using Architecht.Application.Commands;
 using Architecht.Application.DTO;
+using Architecht.Application.Mapping;
 using Architecht.Application.Queries;
 using Architecht.Application.Validators;
 using Architecht.Infrastructure.Repositories.ECommerce;
@@ -20,6 +21,7 @@ namespace Architecht.API.Extensions
         {
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
             return services;
         }
 
@@ -37,6 +39,9 @@ namespace Architecht.API.Extensions
 
                 //products
                 opt.RegisterServicesFromAssemblyContaining<CreateProductCommandHandler>();
+
+                //orders
+                opt.RegisterServicesFromAssemblyContaining<GetAllOrdersQueryHandler>();
             });
 
             return services;
@@ -49,6 +54,13 @@ namespace Architecht.API.Extensions
             services.AddScoped<IValidator<CreateCategoryDto>, CreateCategoryValidator>();
             services.AddScoped<IValidator<UpdateCategoryDto>, UpdateCategoryValidator>();
 
+            return services;
+        }
+
+
+        public static IServiceCollection AddMappings(this IServiceCollection services)
+        {
+            services.AddAutoMapper(typeof(GetAllOrdersProfile).Assembly);
             return services;
         }
 

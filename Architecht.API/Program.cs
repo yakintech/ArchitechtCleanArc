@@ -1,4 +1,5 @@
 using Architecht.API.Extensions;
+using Architecht.API.Middleware;
 using Architecht.Application.Commands;
 using Architecht.Application.DTO;
 using Architecht.Application.Queries;
@@ -22,6 +23,7 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddMediatRHandlers();
 builder.Services.AddRepositories();
 builder.Services.AddValidations();
+builder.Services.AddMappings();
 
 
 var app = builder.Build();
@@ -34,6 +36,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseAuthorization();
 

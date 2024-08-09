@@ -1,5 +1,5 @@
 ﻿using Architecht.Application.Commands;
-using Architecht.Application.DTO.ECommerce.Product;
+using Architecht.Application.DTO;
 using Architecht.Application.Queries.ECommerce.Product;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -24,6 +24,15 @@ namespace Architecht.API.Controllers
         {
             var getAllProductsQuery = new GetAllProductsQuery();
             var result = await _mediator.Send(getAllProductsQuery);
+            return Ok(result);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(Guid id)
+        {
+            var getProductByIdQuery = new GetProductByIdQuery();
+            getProductByIdQuery.Id = id;
+            var result = await _mediator.Send(getProductByIdQuery);
             return Ok(result);
         }
 

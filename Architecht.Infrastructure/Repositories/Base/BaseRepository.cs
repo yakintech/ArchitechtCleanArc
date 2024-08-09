@@ -92,8 +92,6 @@ namespace Architecht.Infrastructure.Repositories.Base
         public T GetById(Guid id)
         {
             var entity = _dbSet.FirstOrDefault(x => x.Id == id && x.IsDeleted == false);
-            if (entity == null)
-                throw new Exception("Entity not found");
             return entity;
         }
 

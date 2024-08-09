@@ -27,12 +27,18 @@ namespace Architecht.API.Middleware
 
         public Task HandleExceptionAsync(HttpContext context, Exception ex)
         {
+
             var statusCode = HttpStatusCode.InternalServerError;
             var message = "Internal Server Error";
 
             if (ex is DataNotFoundException)
             {
                 statusCode = HttpStatusCode.NotFound;
+                message = ex.Message;
+            }
+            else if(ex is UnauthorizedAccessException)
+            {
+                statusCode = HttpStatusCode.Unauthorized;
                 message = ex.Message;
             }
 

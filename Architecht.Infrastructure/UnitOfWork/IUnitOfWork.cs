@@ -1,4 +1,4 @@
-﻿using Architecht.Infrastructure.Repositories.ECommerce;
+﻿using Architecht.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +14,7 @@ namespace Architecht.Infrastructure.UnitOfWork
         IProductRepository ProductRepository { get; }
 
         IOrderRepository OrderRepository { get; }
+        IUserRepository UserRepository { get; }
         void SaveChanges();
     }
 }

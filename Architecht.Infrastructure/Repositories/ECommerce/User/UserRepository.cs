@@ -9,10 +9,15 @@ using System.Threading.Tasks;
 
 namespace Architecht.Infrastructure.Repositories
 {
-    public class OrderRepository : BaseRepository<Order>, IOrderRepository
+    public class UserRepository : BaseRepository<User>, IUserRepository
     {
-        public OrderRepository(ArchitechtContext context) : base(context)
+        private readonly ArchitechtContext _context;
+
+        public UserRepository(ArchitechtContext context) : base(context)
         {
+            _context = context;
         }
+
+
     }
 }

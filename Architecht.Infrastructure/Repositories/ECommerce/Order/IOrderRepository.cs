@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Architecht.Domain.Models;
 
 
-namespace Architecht.Infrastructure.Repositories.ECommerce
+namespace Architecht.Infrastructure.Repositories
 {
     public interface IOrderRepository : IBaseRepository<Order>
     {

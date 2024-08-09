@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Architecht.Infrastructure.Repositories
 {
-    public interface IProductRepository : IBaseRepository<Product>
+    public interface IUserRepository : IBaseRepository<User>
     {
     }
 }

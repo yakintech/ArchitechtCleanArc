@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Architecht.Infrastructure.Repositories.ECommerce
+namespace Architecht.Infrastructure.Repositories
 {
     public interface ICategoryRepository : IBaseRepository<Category>
     {

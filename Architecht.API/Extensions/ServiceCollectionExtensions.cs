@@ -3,7 +3,7 @@ using Architecht.Application.DTO;
 using Architecht.Application.Mapping;
 using Architecht.Application.Queries;
 using Architecht.Application.Validators;
-using Architecht.Infrastructure.Repositories.ECommerce;
+using Architecht.Infrastructure.Repositories;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,6 +22,7 @@ namespace Architecht.API.Extensions
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             return services;
         }
 

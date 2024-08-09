@@ -8,9 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Architecht.API.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class CategoryController : ControllerBase
+    public class CategoryController : BaseAPIController
     {
 
         private readonly IMediator _mediator;

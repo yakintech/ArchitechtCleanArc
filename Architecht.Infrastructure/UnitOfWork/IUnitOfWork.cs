@@ -15,6 +15,7 @@ namespace Architecht.Infrastructure.UnitOfWork
 
         IOrderRepository OrderRepository { get; }
         IUserRepository UserRepository { get; }
+        IRefreshTokenRepository RefreshTokenRepository { get; }
         void SaveChanges();
     }
 }

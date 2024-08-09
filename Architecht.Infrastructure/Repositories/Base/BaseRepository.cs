@@ -45,7 +45,7 @@ namespace Architecht.Infrastructure.Repositories.Base
 
         public T FirstOrDefault(Func<T, bool> predicate)
         {
-            var entity = _dbSet.FirstOrDefault(x => predicate(x) && x.IsDeleted == false);
+            var entity = _dbSet.Where(x => x.IsDeleted == false).FirstOrDefault(predicate);
             
             if (entity == null)
                 throw new Exception("Entity not found");
@@ -67,13 +67,13 @@ namespace Architecht.Infrastructure.Repositories.Base
 
         public IQueryable<T> GetAll(Func<T, bool> predicate)
         {
-            var entities = _dbSet.Where(x => predicate(x) && x.IsDeleted == false);
+            var entities = _dbSet.Where(x => x.IsDeleted == false).Where(predicate).AsQueryable();
             return entities;
         }
 
         public IQueryable<T> GetAll(Func<T, bool> predicate, int page, int pageSize)
         {
-           var entities = _dbSet.Where(x => predicate(x) && x.IsDeleted == false).Skip((page - 1) * pageSize).Take(pageSize);
+           var entities = _dbSet.Where(x => x.IsDeleted == false).Where(predicate).Skip((page - 1) * pageSize).Take(pageSize).AsQueryable();
             return entities;
         }
 

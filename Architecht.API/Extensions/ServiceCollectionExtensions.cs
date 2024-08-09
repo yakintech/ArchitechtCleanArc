@@ -23,6 +23,7 @@ namespace Architecht.API.Extensions
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
             return services;
         }
 
@@ -54,6 +55,8 @@ namespace Architecht.API.Extensions
             services.AddFluentValidationAutoValidation();
             services.AddScoped<IValidator<CreateCategoryDto>, CreateCategoryValidator>();
             services.AddScoped<IValidator<UpdateCategoryDto>, UpdateCategoryValidator>();
+            services.AddScoped<IValidator<RegisterUserDto>, RegisterUserValidator>();
+            services.AddScoped<IValidator<LoginUserDto>, LoginUserValidator>();
 
             return services;
         }

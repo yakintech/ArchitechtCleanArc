@@ -15,15 +15,17 @@ namespace Architecht.Infrastructure.UnitOfWork
         private readonly IProductRepository _productRepository;
         private readonly IOrderRepository _orderRepository;
         private readonly IUserRepository _userRepository;
+        private readonly IRefreshTokenRepository _refreshTokenRepository;
 
 
-        public UnitOfWork(ArchitechtContext architechtContext, ICategoryRepository categoryRepository, IProductRepository productRepository, IOrderRepository orderRepository,IUserRepository userRepository)
+        public UnitOfWork(ArchitechtContext architechtContext, ICategoryRepository categoryRepository, IProductRepository productRepository, IOrderRepository orderRepository,IUserRepository userRepository, IRefreshTokenRepository refreshTokenRepository)
         {
             _architechtContext = architechtContext;
             _categoryRepository = categoryRepository;
             _productRepository = productRepository;
             _orderRepository = orderRepository;
             _userRepository = userRepository;
+            _refreshTokenRepository = refreshTokenRepository;
 
         }
 
@@ -31,6 +33,7 @@ namespace Architecht.Infrastructure.UnitOfWork
         public IProductRepository ProductRepository => _productRepository;
         public IOrderRepository OrderRepository => _orderRepository;
         public IUserRepository UserRepository => _userRepository;   
+        public IRefreshTokenRepository RefreshTokenRepository => _refreshTokenRepository;
 
 
         public void Dispose()

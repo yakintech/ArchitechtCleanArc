@@ -10,3 +10,17 @@ Queryleri sorumlu handlerlara yönlendirir.
 Controller icerisindeki bagimliliklari azaltir.
 Tek handler sadece bir is yapar.
 Test edilebilirlik saglar.
+
+
+
+CQRS Adimlar
+1. DB icin modelimi olusturdum.
+2. Modelimi ArchitechtContext e ekledim.
+3. add-migration ve update-database ile db ye ekledim.
+4. ProductRepository olusturdum. ( interface ve class))
+5. UnitOfWorke bu repositoryi ekledim.
+6. CreateProductDto adinda POST endpointi icin bir dto olusturdum.
+7. CreateProductCommand olusturdum.
+8. CreateProductCommandHandler olusturdum.
+9. Extension bolumune ProductRepository ve CommandHandler icin extensionlar ekledim.
+10. ProductController olusturdum ve mediatr ile commandi gonderdim.

@@ -11,6 +11,7 @@ namespace Architecht.Infrastructure.UnitOfWork
     {
 
         ICategoryRepository CategoryRepository { get; }
+        IProductRepository ProductRepository { get; }
         void SaveChanges();
     }
 }

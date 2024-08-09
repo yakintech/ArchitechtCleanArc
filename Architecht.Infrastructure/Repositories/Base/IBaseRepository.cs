@@ -17,6 +17,9 @@ namespace Architecht.Infrastructure.Repositories
         IQueryable<T> GetAll(Func<T, bool> predicate);
         IQueryable<T> GetAll(Func<T, bool> predicate, int page, int pageSize);
 
+        //getAll with include
+        IQueryable<T> GetAll(params string[] include);
+
         T Create(T entity);
         T Update(T entity);
         void Delete(Guid id);

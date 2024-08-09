@@ -77,6 +77,18 @@ namespace Architecht.Infrastructure.Repositories.Base
             return entities;
         }
 
+        public IQueryable<T> GetAll(params string[] include)
+        {
+            var entities = _dbSet.Where(x => x.IsDeleted == false);
+            foreach (var item in include)
+            {
+                entities = entities.Include(item);
+            }
+            return entities;
+           
+            
+        }
+
         public T GetById(Guid id)
         {
             var entity = _dbSet.FirstOrDefault(x => x.Id == id && x.IsDeleted == false);

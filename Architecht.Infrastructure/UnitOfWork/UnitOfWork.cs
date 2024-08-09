@@ -12,15 +12,20 @@ namespace Architecht.Infrastructure.UnitOfWork
     {
         private readonly ArchitechtContext _architechtContext;
         private readonly ICategoryRepository _categoryRepository;
+        private readonly IProductRepository _productRepository;
 
 
-        public UnitOfWork(ArchitechtContext architechtContext, ICategoryRepository categoryRepository)
+        public UnitOfWork(ArchitechtContext architechtContext, ICategoryRepository categoryRepository, IProductRepository productRepository)
         {
             _architechtContext = architechtContext;
             _categoryRepository = categoryRepository;
+            _productRepository = productRepository;
+
         }
 
         public ICategoryRepository CategoryRepository => _categoryRepository;
+
+        public IProductRepository ProductRepository => _productRepository;
 
 
         public void Dispose()

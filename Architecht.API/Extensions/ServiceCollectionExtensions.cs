@@ -19,6 +19,7 @@ namespace Architecht.API.Extensions
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
             return services;
         }
 
@@ -33,6 +34,9 @@ namespace Architecht.API.Extensions
                 opt.RegisterServicesFromAssemblyContaining<UpdateCategoryCommandHandler>();
                 opt.RegisterServicesFromAssemblyContaining<DeleteCategoryCommandHandler>();
                 opt.RegisterServicesFromAssemblyContaining<GetCategoriesWithPaginationQueryHandler>();
+
+                //products
+                opt.RegisterServicesFromAssemblyContaining<CreateProductCommandHandler>();
             });
 
             return services;

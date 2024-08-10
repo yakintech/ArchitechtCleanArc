@@ -10,6 +10,7 @@ using Architecht.Infrastructure.UnitOfWork;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -27,6 +28,7 @@ builder.Services.AddMediatRHandlers();
 builder.Services.AddRepositories();
 builder.Services.AddValidations();
 builder.Services.AddMappings();
+
 
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 

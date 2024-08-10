@@ -3,18 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architecht.Domain", "Architecht.Domain\Architecht.Domain.csproj", "{F811AF2B-A481-494D-B2A7-2E81F853089B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Architecht.Domain", "Architecht.Domain\Architecht.Domain.csproj", "{F811AF2B-A481-494D-B2A7-2E81F853089B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architecht.Infrastructure", "Architecht.Infrastructure\Architecht.Infrastructure.csproj", "{01E40416-37DC-4B61-B700-A383B1A8C0F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Architecht.Infrastructure", "Architecht.Infrastructure\Architecht.Infrastructure.csproj", "{01E40416-37DC-4B61-B700-A383B1A8C0F2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{53AC4548-2FCE-4066-BFA9-CF07CFE5A234}"
 	ProjectSection(SolutionItems) = preProject
 		Patterns.txt = Patterns.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architecht.API", "Architecht.API\Architecht.API.csproj", "{DA4F7CA4-9522-4337-B6CF-CD644C0C1472}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Architecht.API", "Architecht.API\Architecht.API.csproj", "{DA4F7CA4-9522-4337-B6CF-CD644C0C1472}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Architecht.Application", "Architecht.Application\Architecht.Application.csproj", "{C4FCEE3D-3372-481D-9014-2EF40037BECC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Architecht.Application", "Architecht.Application\Architecht.Application.csproj", "{C4FCEE3D-3372-481D-9014-2EF40037BECC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DesignPatterns", "DesignPatterns", "{6F2CDF00-8D06-47A8-9385-A4553AFF9244}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjectionPattern", "DependencyInjectionPattern\DependencyInjectionPattern.csproj", "{D6AD12E2-FA8C-4413-8743-279C08F254A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjectionPattern2", "DependencyInjectionPattern2\DependencyInjectionPattern2.csproj", "{356797AC-9611-48EC-A04D-A6EE04BA89A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjectionSingletonScopedTransient", "DependencyInjectionSingletonScopedTransient\DependencyInjectionSingletonScopedTransient.csproj", "{C84C2582-1E09-43A2-B6C4-0004C5B0E4CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,9 +46,26 @@ Global
 		{C4FCEE3D-3372-481D-9014-2EF40037BECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4FCEE3D-3372-481D-9014-2EF40037BECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4FCEE3D-3372-481D-9014-2EF40037BECC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6AD12E2-FA8C-4413-8743-279C08F254A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6AD12E2-FA8C-4413-8743-279C08F254A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6AD12E2-FA8C-4413-8743-279C08F254A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6AD12E2-FA8C-4413-8743-279C08F254A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{356797AC-9611-48EC-A04D-A6EE04BA89A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{356797AC-9611-48EC-A04D-A6EE04BA89A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{356797AC-9611-48EC-A04D-A6EE04BA89A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{356797AC-9611-48EC-A04D-A6EE04BA89A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C84C2582-1E09-43A2-B6C4-0004C5B0E4CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C84C2582-1E09-43A2-B6C4-0004C5B0E4CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C84C2582-1E09-43A2-B6C4-0004C5B0E4CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C84C2582-1E09-43A2-B6C4-0004C5B0E4CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D6AD12E2-FA8C-4413-8743-279C08F254A0} = {6F2CDF00-8D06-47A8-9385-A4553AFF9244}
+		{356797AC-9611-48EC-A04D-A6EE04BA89A8} = {6F2CDF00-8D06-47A8-9385-A4553AFF9244}
+		{C84C2582-1E09-43A2-B6C4-0004C5B0E4CB} = {6F2CDF00-8D06-47A8-9385-A4553AFF9244}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EF4F3080-1A9E-4033-99C0-CE17FFFE8B03}
